@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.optus.demo"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    flavorDimensions "applicationId"
+    flavorDimensions "minSdkVersion"
+    productFlavors {
+        Optus {
+            applicationId = "com.optus.demo"
+            minSdkVersion 23
+        }
+        OptusTesting {
+            applicationId "com.optus.demo.testing"
+            minSdkVersion 23
+        }
+    }
+    signingConfigs {
+        debug {
+            // Using the default $HOME/.android/debug.keystore, but since it is signed, we want to align it too.
+            buildTypes.debug.zipAlignEnabled = false;
+        }
+
+        release {
+            if (project.hasProperty('STORE_FILE') &&
+                    project.hasProperty('STORE_PASSWORD') &&
+                    project.hasProperty('KEY_ALIAS') &&
+                    project.hasProperty('KEY_PASSWORD')) {
+                storeFile = file(STORE_FILE)
+                storePassword = STORE_PASSWORD
+                keyAlias = KEY_ALIAS
+                keyPassword = KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled = true
+            shrinkResources = true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            proguardFile 'proguard-optus.txt'
+            signingConfig signingConfigs.release
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

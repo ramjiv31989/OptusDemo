@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">OptusDemo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_view_1">TextView1</string>
+    <string name="text_view_2">TextView2</string>
+    <string name="text_view_3">TextView3</string>
+    <string name="red_btn">redBtn</string>
+    <string name="blue_btn">bluebtn</string>
+    <string name="green_btn">greenBtn</string>
+    <string name="go_to_scenario_2">Go to Directions</string>
+    <string name="mode_of_transport">Mode of transport:</string>
+    <string name="navigate_directions">NAVIGATE DIRECTIONS</string>
+    <string name="go_to_scenario_1">GO TO List page</string>
+    <string name="default_display">Default displayed is ITEM NO 1</string>
+    <string name="displayed_item">Displayed item is:</string>
+    <string name="item_one">Item No 1</string>
+    <string name="item_two">Item No 2</string>
+    <string name="item_three">Item No 3</string>
+    <string name="item_four">Item No 4</string>
+    <string name="item_five">Item No 5</string>
+    <string name="loading_message">Loading..please wait</string>
+    <string name="location">location</string>
+    <string name="latitude">latitude</string>
+    <string name="longitude">longitude</string>
+    <string name="fromcentral">fromcentral</string>
+    <string name="car">car</string>
+    <string name="train">train</string>
+    <string name="id">id</string>
+    <string name="name">name</string>
+    <string name="car_name">Car - </string>
+    <string name="train_name">Train - </string>
+    <string name="internet_connection_not_available">Internet connection not available</string>
+    <string name="network_failed">Network failed</string>
+    <string name="response_unsuccessful">Response failure</string>
+    <string name="train_not_available">N/A</string>
+    <string name="first_fragment">First Fragment</string>
+    <string name="fourth_fragment">Fourth Fragment</string>
+    <string name="second_fragment">Second Fragment</string>
+    <string name="third_fragment">Third Fragment</string>
+    <string name="double_quotes">\" \"</string>
+    <string name="scenario_1">List Page</string>
+    <string name="scenario_2">Direction</string>
+</resources>
