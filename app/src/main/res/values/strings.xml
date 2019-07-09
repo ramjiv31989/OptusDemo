@@ -39,7 +39,7 @@
     <string name="fourth_fragment">Fourth Fragment</string>
     <string name="second_fragment">Second Fragment</string>
     <string name="third_fragment">Third Fragment</string>
-    <string name="double_quotes">\" \"</string>
+    <string name="double_quotes">\u0020</string>
     <string name="scenario_1">List Page</string>
     <string name="scenario_2">Direction</string>
 </resources>
